@@ -19,7 +19,7 @@ jobs:
     - uses: actions/checkout@v3
     - uses: actions/checkout@v3
     - run: docker-compose -f docker-compose-build.yaml build --parallel
-    - run: docker build -t udagram-frontend:local ./udagram-frontend:local
+    - run: docker build -t udagram-frontend ./udagram-frontend
     - run: docker build -t udagram-api-user ./udagram-api-user
     - run: docker build -t udagram-api-feed ./udagram-api-feed
     - run: docker build -t reverseproxy ./reverseproxy
