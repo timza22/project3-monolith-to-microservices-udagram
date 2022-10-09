@@ -13,4 +13,9 @@ docker push "fatoucheikh77/reverseproxy:v1.2" &
 docker push "fatoucheikh77/udagram-api-user:v1.1" &
 docker push "fatoucheikh77/udagram-api-feed:v1.1" &
 docker push "fatoucheikh77/udagram-frontend:v1.2" &
+
+docker pull "fatoucheikh77/reverseproxy:v1.2" &
+docker pull "fatoucheikh77/udagram-api-user:v1.1" &
+docker pull "fatoucheikh77/udagram-api-feed:v1.1" &
+docker pull "fatoucheikh77/udagram-frontend:v1.2" &
 wait
