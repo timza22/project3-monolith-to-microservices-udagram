@@ -21,6 +21,11 @@ spec:
           image: fatoucheikh77/udagram-api-feed:v1.1
           ports:
             - containerPort: 8080
+          resources:
+            limits:
+               cpu: 500m
+            requests:
+               cpu: 200m  
           envFrom:
             - configMapRef:
                  name: udagram-env
@@ -31,5 +36,5 @@ spec:
               name: udagram-aws
       volumes:
         - name: udagram-aws
-          configMap:
-           name: udagram-aws
+          secret:
+           secretName: udagram-aws

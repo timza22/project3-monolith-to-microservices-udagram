@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata:
   name: udagram-env
 data:
- AWS_REGION: us-east-1b
+ AWS_REGION: us-east-1
  POSTGRES_HOST: udagram-fatou.cneplevn9fdi.us-east-1.rds.amazonaws.com
  POSTGRES_DB: postgres
  AWS_BUCKET: fatou-monolithbucket-dev
