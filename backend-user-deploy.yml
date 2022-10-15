@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-user
+  labels:
+    app: backend-user
+spec:
+  selector:
+    matchLabels:
+      app: backend-user
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: backend-user
+    spec:
+      restartPolicy: Always
+      containers:
+        - name: backend-user
+          imagePullPolicy: Always
+          image: fatoucheikh77/udagram-api-user:v1.1
+          ports:
+            - containerPort: 8080
+          envFrom:
+            - configMapRef:
+                 name: udagram-env
+            - secretRef:
+                 name: postgres-env
+                 

@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-feed
+  labels:
+    app: backend-feed
+spec:
+  selector:
+    matchLabels:
+      app: backend-feed
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: backend-feed
+    spec:
+      restartPolicy: Always
+      containers:
+        - name: backend-feed
+          imagePullPolicy: Always
+          image: fatoucheikh77/udagram-api-feed:v1.1
+          ports:
+            - containerPort: 8080
+          envFrom:
+            - configMapRef:
+                 name: udagram-env
+            - secretRef:
+                 name: postgres-env
+          volumeMounts:
+            - mountPath: "/root/.aws/"
+              name: udagram-aws
+      volumes:
+        - name: udagram-aws
+          configMap:
+           name: udagram-aws

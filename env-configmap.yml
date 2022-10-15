@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: udagram-env
+data:
+ AWS_REGION: us-east-1b
+ POSTGRES_HOST: udagram-fatou.cneplevn9fdi.us-east-1.rds.amazonaws.com
+ POSTGRES_DB: postgres
+ AWS_BUCKET: fatou-monolithbucket-dev
+ AWS_PROFILE: default
+ JWT_SECRET: hello
+ URL: http://localhost:8100
